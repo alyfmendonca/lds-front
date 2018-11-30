@@ -1,0 +1,66 @@
+<div class="mat-elevation-z8">
+  
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> Tipo de espaço </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo_espaco}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome do espaço </th>
+        <td mat-cell *matCellDef="let element"> {{element.nome_espaco}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Capacidade </th>
+        <td mat-cell *matCellDef="let element"> {{element.capacidade_esp}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Situação </th>
+        <td mat-cell *matCellDef="let element" [ngClass]="getClass(element.situacao_infra)"> {{element.situacao_infra}} </td>
+        
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  <br>
+    <br>
+    <br>
+  <div class="example-container">
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newInfra.tipo_espaco" placeholder="tipo">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput [(ngModel)]="newInfra.nome_espaco" placeholder="nome">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="newInfra.capacidade_esp" placeholder="capacidade" type="number">
+      </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select [(ngModel)]="newInfra.situacao_infra" placeholder="Select">
+        <mat-option  value="Existente">Existente</mat-option>
+        <mat-option value="Previsto">Previsto</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <button (click)="escreve()" >submit</button>
+
+
+    <button class="add-new" (click)="addNew()"> 
+      +
+    </button>
+  </div>

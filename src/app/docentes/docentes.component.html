@@ -1,0 +1,71 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<div class="mat-elevation-z8">
+  
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome_docente}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="area">
+      <th mat-header-cell *matHeaderCellDef> Área </th>
+      <td mat-cell *matCellDef="let element"> {{element.area_docente}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="desc">
+      <th mat-header-cell *matHeaderCellDef> Descrição da Área </th>
+      <td mat-cell *matCellDef="let element"> {{element.desc_area}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="regime">
+      <th mat-header-cell *matHeaderCellDef> Regime Trabalho </th>
+      <td mat-cell *matCellDef="let element" > {{element.regime_trabalho}} </td>
+      
+    </ng-container>
+
+    <ng-container matColumnDef="fg">
+      <th mat-header-cell *matHeaderCellDef> FG, FCC, CD ou S/F </th>
+      <td mat-cell *matCellDef="let element" > {{element.fg_fcc}} </td>
+      
+    </ng-container>
+
+    <ng-container matColumnDef="cont">
+      <th mat-header-cell *matHeaderCellDef> Contagem Docente </th>
+      <td mat-cell *matCellDef="let element"> {{element.cont_docente}} </td>
+      
+    </ng-container>
+
+    <ng-container matColumnDef="docente">
+      <th mat-header-cell *matHeaderCellDef> Docente Tempo Integral </th>
+      <td mat-cell *matCellDef="let element"> {{element.docente_integral}} </td>
+      
+    </ng-container>
+
+    <ng-container matColumnDef="docequi">
+      <th mat-header-cell *matHeaderCellDef> Docente Equivalente </th>
+      <td mat-cell *matCellDef="let element"> {{element.docente_equi}} </td>
+      
+    </ng-container>
+
+    <ng-container matColumnDef="obs">
+      <th mat-header-cell *matHeaderCellDef> Observação </th>
+      <td mat-cell *matCellDef="let element"> {{element.obs_docente}} </td>
+      
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+
+

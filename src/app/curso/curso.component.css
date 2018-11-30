@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+th{
+    background: #413E3E;
+    color: #ffffff;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center !important;
+    border-right: 1px solid #fff; 
+}
+td{
+    text-align: center !important;
+}
+.green-bg{
+    background: #4C7D2B;
+    color: #ffffff;
+}
+.red-bg{
+    background: #A8130A;
+    color: #ffffff; 
+}

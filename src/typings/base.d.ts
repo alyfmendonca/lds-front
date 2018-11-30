@@ -1,0 +1,29 @@
+type Base = {
+    id_base: number,
+    campus_base: string;
+    eixo: string;
+    tipo_curso: string;
+    curso_base: string;
+    tipo_oferta: string;
+    dis_oferta: string;
+    modalidade: string;
+    turno: string;
+    semestre_inicio: string;
+    periocidade_curricular: string;
+    periocidade_ingresso: string;
+    situacao_oferta: string;
+    situacao_ppc: string;
+    fomento: string;
+    local_curso: string;
+    cargahora_base: string;
+    fase_semestre: string;
+    qtd_vagas: string;
+    duracao_semestre: string;
+    semana_semestre: string;
+    observacao: string;
+    qtd_turmas: string;
+    cargahora_fase: string;
+    cargahora_minima: string;
+    fech: string;
+    fec: string;
+};
