@@ -11,6 +11,21 @@ export class DocentesComponent implements OnInit {
 
   docentes: Docente[];
 
+  newDocente: Docente = {
+    id_docente: 0,
+    campus_docente: "Guarulhos",
+    nome_docente: "",
+    area_docente: "",
+    desc_area: "",
+    regime_trabalho: "",
+    fg_fcc: "",
+    cont_docente: "",
+    docente_integral: "",
+    docente_equi: "",
+    obs_docente: ""
+  }  
+
+
   displayedColumns: string[] = ['nome', 'area', 'desc', 'regime', 'fg', 'cont', 'docente', 'docequi', 'obs'];
   dataSource = new MatTableDataSource<Docente>();
 
@@ -30,6 +45,12 @@ export class DocentesComponent implements OnInit {
     this.apiService.getDocente().subscribe(response => {
       this.dataSource.data = response;
     });
+  }
+    escreve(){
+      this.apiService.postDocente(this.newDocente).subscribe(response =>{
+        console.log('deu certo');
+      });
+    
   }
 
 }

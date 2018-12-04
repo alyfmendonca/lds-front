@@ -66,6 +66,49 @@
 
   <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
 </div>
+<div class="example-container">
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newDocente.nome_docente" placeholder="Nome">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newDocente.area_docente" placeholder="Área">
+  </mat-form-field>
+
+  <mat-form-field>
+      <input matInput [(ngModel)]="newDocente.desc_area" placeholder="Descrição da Área	" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newDocente.regime_trabalho" placeholder="Regime Trabalho	" type="text">
+    </mat-form-field>  
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newDocente.fg_fcc" placeholder="FG, FCC, CD ou S/F	" type="text">
+    </mat-form-field>  
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newDocente.cont_docente" placeholder="Contagem Docente	" type="text">
+    </mat-form-field> 
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newDocente.docente_integral" placeholder="Docente Tempo Integral	" type="text">
+    </mat-form-field> 
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newDocente.docente_equi" placeholder="Docente Equivalente	" type="text">
+    </mat-form-field> 
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newDocente.obs_docente" placeholder="Observação" type="text">
+    </mat-form-field> 
+    
+
+  
+  
+  <button (click)="escreve()" >submit</button>
+</div>  
 
 
 

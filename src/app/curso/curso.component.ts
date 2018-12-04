@@ -12,6 +12,17 @@ export class CursoComponent implements OnInit {
 
   cursos: Curso[];
 
+  newCurso: Curso = {
+    id_curso: 0,
+    nome_curso: '',
+    fec_curso: '',
+    cargahora_curso: '',
+    cargahora_cursointegrado: '',
+    eixo_tecnologico: '',
+    tipo_curso: '',
+    obs_curso: ''
+  }  
+
   displayedColumns: string[] = ['nome', 'fec', 'carga', 'cargaint', 'eixo', 'tipo', 'obs'];
   dataSource = new MatTableDataSource<Curso>();
 
@@ -31,6 +42,11 @@ export class CursoComponent implements OnInit {
 
     this.apiService.getCurso().subscribe(response => {
       this.dataSource.data = response;
+    });
+  }
+  escreve(){
+    this.apiService.postCurso(this.newCurso).subscribe(response =>{
+      console.log('deu certo');
     });
   }
   

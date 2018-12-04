@@ -14,6 +14,7 @@ export class ApiService {
     getInfra(): Observable<Infra[]>{
         return this.http.get<Infra[]>(`${this.API_URL}infra`);
     }
+    
     getBase(): Observable<Base[]>{
         return this.http.get<Base[]>(`${this.API_URL}base`);
     }
@@ -28,6 +29,19 @@ export class ApiService {
     }
 
     postInfra(infra: Infra): Observable<Infra>{
-        return this.http.post<Infra>(`${this.API_URL}infra`, infra);
+        return this.http.post<Infra>(`${this.API_URL}infra/`, infra);
     }
+    postBase(base: Base): Observable<Base>{
+        return this.http.post<Base>(`${this.API_URL}base/`, base);
+    }
+    postCurso(curso: Curso): Observable<Curso>{
+        return this.http.post<Curso>(`${this.API_URL}curso/`, curso);
+    }
+    postArea(area: Area): Observable<Area>{
+        return this.http.post<Area>(`${this.API_URL}areas/`, area);
+    }
+    postDocente(docente: Docente): Observable<Docente>{
+        return this.http.post<Docente>(`${this.API_URL}docentes/`, docente);
+    }
+
 }

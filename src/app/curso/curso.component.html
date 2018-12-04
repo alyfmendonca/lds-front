@@ -54,6 +54,39 @@
 
   <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
 </div>
+<div class="example-container">
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newCurso.nome_curso" placeholder="Nome do curso	">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newCurso.fec_curso" placeholder="FEC">
+  </mat-form-field>
+
+  <mat-form-field>
+      <input matInput [(ngModel)]="newCurso.cargahora_curso" placeholder="C.H min Regulamentada" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newCurso.cargahora_cursointegrado" placeholder="C.H min Regulamentada Integrado" type="text">
+    </mat-form-field>  
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newCurso.eixo_tecnologico" placeholder="Eixo Tecnológico" type="text">
+    </mat-form-field>  
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newCurso.tipo_curso" placeholder="Tipo de Curso" type="text">
+    </mat-form-field> 
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="newCurso.obs_curso" placeholder="Observação" type="text">
+    </mat-form-field> 
+  
+  
+  <button (click)="escreve()" >submit</button>
+</div>  
 
 
 

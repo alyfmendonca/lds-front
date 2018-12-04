@@ -34,6 +34,26 @@
 
   <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
 </div>
+<div class="example-container">
 
+  <mat-form-field>
+    <input matInput [(ngModel)]="newArea.sigla_area" placeholder="Sigla">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newArea.area_atua" placeholder="Area de Atuação">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newArea.equi_area" placeholder="Equivalencia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newArea.obs_area" placeholder="Observação">
+  </mat-form-field>
+  
+  
+  <button (click)="escreve()" >submit</button>
+</div>
 
 
